@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computational Geometry Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Computational Geometry Visualizer</h1>
+        </header>
+        
+        <div class="toolbar">
+            <div class="tool-group">
+                <button id="clear-btn">Clear Canvas</button>
+                <button id="undo-btn">Undo Last Point</button>
+            </div>
+            
+            <div class="tool-group">
+                <select id="algorithm-select">
+                    <option value="convex-hull">Convex Hull</option>
+                    <option value="intersection">Line Intersection</option>
+                </select>
+                <button id="calculate-btn">Calculate</button>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="geometry-canvas" width="800" height="600"></canvas>
+        </div>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <div id="mode-instructions" class="mode-instructions">
+                <p><strong>Convex Hull Mode:</strong> Click on the canvas to add points. Then click "Calculate" to compute the convex hull.</p>
+                <p><strong>Line Intersection Mode:</strong> Click to add two points for the first line, then two more for the second line. Click "Calculate" to find the intersection.</p>
+            </div>
+        </div>
+        
+        <div class="status-bar">
+            <span id="status-message">Ready</span>
+        </div>
+    </div>
+    
+    <script src="api-client.js" type="module"></script>
+    <script src="renderer.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
